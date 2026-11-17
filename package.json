@@ -1,0 +1,42 @@
+{
+  "name": "oura-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for the Oura Ring API v2: daily HRV, resting heart rate, sleep and readiness, plus longer-term trends.",
+  "type": "module",
+  "bin": {
+    "oura-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "start": "node dist/index.js",
+    "auth": "node dist/index.js auth",
+    "prepare": "npm run build"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "oura",
+    "hrv",
+    "sleep",
+    "claude"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.7"
+  }
+}
